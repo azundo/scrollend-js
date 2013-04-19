@@ -22,7 +22,8 @@ ScrollEnd = (function () {
     var checkInterval = (options && options.checkInterval) || 100,
     scrolling = false,
     lastScrollPosition = getScrollTop(),
-    i = 0;
+    i = 0,
+    that = this;
 
     this.subscribers = [];
 
@@ -31,8 +32,8 @@ ScrollEnd = (function () {
       if (scrolling && scrollPosition === lastScrollPosition) {
         // we have stopped scrolling
         scrolling = false;
-        for (i = 0; i < subscribers.length, i++) {
-          subscribers[i](scrollPosition);
+        for (i = 0; i < that.subscribers.length; i++) {
+          that.subscribers[i](scrollPosition);
         }
       } else if (!scrolling && scrollPosition !== lastScrollPosition) {
         // we have started scrolling
