@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Scrollend-js by azundo</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/azundo/scrollend-js">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/azundo/scrollend-js/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/azundo/scrollend-js/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Scrollend-js</h1>
+          <p>Adds the capability to configure and subscribe to a scrollEnd event.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/azundo">azundo</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>scrollend-js</h1>
+
+<p>Adds the capability to configure and subscribe to a scrollEnd event.</p>
+
+<p>Checks the scroll position every 100ms and fires subscriber functions if
+scrolling has stopped. Doesn't attach to the scroll event as that produces
+slow and jerky scrolling behaviour.</p>
+
+<p><strong>Usage</strong></p>
+
+<p>You must first create a <code>ScrollEnd</code> instance and then subscribe to it. Any
+function that has subscribed is called when scrolling stops. <code>ScrollEnd</code> passes
+the position of the top of the screen as an argument to all subscribers.</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">onScrollEnd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ScrollEnd</span><span class="p">();</span>
+
+<span class="nx">onScrollEnd</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">scrollPosition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'You stopped scrolling at: '</span> <span class="o">+</span> <span class="nx">scrollPosition</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>Functions can also be unsubscribed.</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">onScrollEnd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ScrollEnd</span><span class="p">();</span>
+
+<span class="c1">// subscribe</span>
+<span class="nx">onScrollEnd</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">myFunc</span><span class="p">);</span>
+
+<span class="c1">// unsubscribe</span>
+<span class="nx">onScrollEnd</span><span class="p">.</span><span class="nx">unsubscribe</span><span class="p">(</span><span class="nx">myFunc</span><span class="p">);</span>
+</pre></div>
+
+<p>The <code>sub</code> and <code>unsub</code> functions are also aliased to <code>subscribe</code> and
+<code>unsubscribe</code> respectively.</p>
+
+<p><strong>Configuration</strong></p>
+
+<p><code>ScrollEnd</code> takes an options config options. Currently it only supports one
+option, a <code>checkInterval</code> integer that specifies the interval in milliseconds to
+check the scroll position for a stoppage. If not specified in options
+<code>checkInterval</code> defaults to 100.</p>
+
+<div class="highlight"><pre>
+<span class="c1">// check every 50ms instead of 100ms</span>
+<span class="nx">onScrollEnd</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ScrollEnd</span><span class="p">({</span>
+    <span class="nx">checkInterval</span><span class="o">:</span> <span class="mi">50</span>
+<span class="p">});</span>
+</pre></div>
+
+<p><strong>Examples</strong></p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
