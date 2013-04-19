@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   </head>
-  <body>
+  <body style="min-height: 1200px;">
       <div id="header">
         <nav>
           <li class="fork"><a href="https://github.com/azundo/scrollend-js">View On GitHub</a></li>
@@ -40,8 +40,8 @@
         </div>
 
         <h1>scrollend-js Example</h1>
+        <p>A simple example that generates a list of all scrollEnd positions and times</p>
         <h2>Scroll Log</h2>
-        <p>A list of all scrolling positions and times</p>
         <ul id="scroll-log">
         </ul>
 
@@ -55,7 +55,7 @@
         $(function () {
             var onScrollEnd = new ScrollEnd();
             onScrollEnd.subscribe(function (position) {
-                $('#scroll-log').append('<li>Scrolled to ' + position + ' on ' + new Date() + '</li>');
+                $('#scroll-log').append('<li>You scrolled to ' + position + ' on ' + new Date() + '</li>');
             });
         });
     </script>
