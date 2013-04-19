@@ -52,4 +52,5 @@ onScrollEnd = new ScrollEnd({
 ```
 
 
-**Examples**
+**Demo**
+A demo can be seen at http://azundo.github.io/scrollend-js/examples/.
