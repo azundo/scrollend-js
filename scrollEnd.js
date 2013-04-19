@@ -1,3 +1,8 @@
+/*
+ * All code Copyright Benjamin Best 2013 unless otherwise referenced.  Licensed
+ * under the MIT License, see the LICENSE file included in this repository for
+ * the full terms.
+ */
 ScrollEnd = (function () {
   var ScrollEnd;
 
